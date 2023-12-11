@@ -1,6 +1,6 @@
 import React from "react";
-import TopBar from "./navbar/topBar";
-import LeftBar from "./navbar/leftBar";
+import TopBar from "../navbar/topBar";
+import LeftBar from "../navbar/leftBar";
 
 const Layout = () => {
   return (

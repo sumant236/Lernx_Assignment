@@ -1,11 +1,14 @@
+import { BrowserRouterserRouter } from "react-router-dom";
 import "./App.css";
-import Layout from "./Layout";
+import Layout from "./layout/Layout";
 
 function App() {
   return (
-    <>
-      <Layout />
-    </>
+    <BrowserRouter>
+      <Route path="/">
+        <Layout />
+      </Route>
+    </BrowserRouter>
   );
 }
 
