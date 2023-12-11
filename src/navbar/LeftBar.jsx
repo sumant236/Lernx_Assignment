@@ -1,54 +1,19 @@
-import {
-  AppstoreFilled,
-  ContainerFilled,
-  FundFilled,
-  IeCircleFilled,
-  UserOutlined,
-} from "@ant-design/icons";
 import { Menu } from "antd";
 import React, { useState } from "react";
-import HomePage from "../layout/HomePage";
-import ComingSoon from "../Components/ComingSoon";
 import Image1 from "../assets/Indonesia_UI_Designer.png";
 import Image2 from "../assets/Indonesia_UX_Research.png";
 import Image3 from "../assets/Prototyping_club.png";
 import Image4 from "../assets/Indonesia_UI_Designer2.png";
 
-const LeftBar = () => {
-  const [selectedMenuItem, setSelectedMenuItem] = useState("1");
-
-  const componentSwitch = (key) => {
-    switch (key) {
-      case "1":
-        return (
-          <div className="bg-slate-100 h-full">
-            <HomePage />
-          </div>
-        );
-      case "2":
-        return <ComingSoon />;
-      case "3":
-        return <ComingSoon />;
-      case "4":
-        return <ComingSoon />;
-      case "5":
-        return <ComingSoon />;
-      default:
-        break;
-    }
-  };
-
-  const menuList = [
-    { key: "1", icon: <AppstoreFilled />, label: "Home" },
-    { key: "2", icon: <ContainerFilled />, label: "Job Invites" },
-    { key: "3", icon: <FundFilled />, label: "Analytics" },
-    { key: "4", icon: <UserOutlined />, label: "My Profile" },
-    { key: "5", icon: <IeCircleFilled />, label: "Explore" },
-  ];
-
+const LeftBar = ({
+  componentSwitch,
+  selectedMenuItem,
+  setSelectedMenuItem,
+  menuList,
+}) => {
   return (
     <div className="flex items-start">
-      <div className="flex flex-col w-52">
+      <div className="flex flex-col w-52 md:hidden sm:hidden">
         <Menu
           style={{ width: 209 }}
           defaultSelectedKeys={["1"]}

@@ -41,8 +41,8 @@ const Profiledetails = () => {
     }
   };
   return (
-    <div className="flex-1 bg-slate-100 h-full">
-      <div className="m-4 bg-white shadow-lg rounded-md">
+    <div className="flex-1 bg-slate-100 h-full w-full">
+      <div className="m-4 bg-white shadow-lg rounded-md sm:mt-1 sm:m-0 sm:w-full">
         <Menu
           onClick={(e) => setCurrent(e.key)}
           selectedKeys={[current]}

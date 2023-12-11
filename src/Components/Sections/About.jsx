@@ -38,7 +38,7 @@ const About = () => {
   };
 
   return (
-    <div className="bg-slate-100 h-[42rem]">
+    <div className="bg-slate-100 h-[42rem] lg:h-full md:h-full sm:h-full">
       <div className="bg-white flex gap-2 p-2">
         <p className="text-slate-500 text-sm flex-1">{profSummary}</p>
         <EditOutlined

@@ -14,9 +14,9 @@ const HomePage = () => {
       </div>
       <img
         src={ProfileImg}
-        className="rounded-full border-4 absolute top-36 left-64 w-44"
+        className="rounded-full border-4 absolute top-36 left-64 w-44 sm:left-1/4 md:left-1/3 lg:inset-x-1/2"
       />
-      <div className="flex m-auto h-full">
+      <div className="flex m-auto h-full lg:flex-col md:flex-col sm:flex-col">
         <ProfileSection />
         <Profiledetails />
       </div>

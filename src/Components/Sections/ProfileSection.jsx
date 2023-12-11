@@ -7,7 +7,7 @@ import Slack from "../../assets/slack-logo.png";
 
 const ProfileSection = () => {
   return (
-    <div className="text-center pt-24 px-4 w-72 bg-white">
+    <div className="text-center pt-24 px-4 max-w-[25%] bg-white lg:max-w-full md:max-w-full sm:max-w-full sm:px-2">
       <h3 className="text-xl font-bold">Ayaat Khanna</h3>
       <p className="text-slate-400 text-sm">UI/UX Designer</p>
       <div className="flex gap-2 alignt-center justify-center p-2">
@@ -37,8 +37,8 @@ const ProfileSection = () => {
         <img src={Gmail} className="w-7 h-5 px-1" />
         <img src={Slack} className="w-7 h-5" />
       </div>
-      <div className="bg-slate-100 rounded-md border border-violet-200 py-4">
-        <p className="pb-3">Wheel of Opportunities</p>
+      <div className="bg-slate-100 rounded-md border border-violet-200 py-4 sm:py-2">
+        <p className="pb-3 sm:py-1">Wheel of Opportunities</p>
         <Progress
           type="circle"
           percent={40}
@@ -61,6 +61,7 @@ const ProfileSection = () => {
             to: "#87d068",
           }}
           showInfo={false}
+          className="m-0"
         />
         <p className="text-xs">
           Hurray! You are in the top{" "}
