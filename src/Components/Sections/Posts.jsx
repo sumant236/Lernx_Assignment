@@ -1,7 +1,7 @@
 import React from "react";
 import Comment1 from "../../assets/comment1.avif";
-import Comment2 from "../../assets/comment2.jpg";
-import Comment3 from "../../assets/comment3.jpg";
+import Comment2 from "../../assets/Comment2.jpg";
+import Comment3 from "../../assets/Comment3.jpg";
 import ProfileImg from "../../assets/profile_img.jpg";
 import CommentExample from "../../assets/comment1_example.png";
 import {
