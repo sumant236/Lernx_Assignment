@@ -11,9 +11,11 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 
+// Layout of the website
 const Layout = () => {
   const [selectedMenuItem, setSelectedMenuItem] = useState("1");
 
+  // List of menu items
   const menuList = [
     { key: "1", icon: <AppstoreFilled />, label: "Home" },
     { key: "2", icon: <ContainerFilled />, label: "Job Invites" },
@@ -44,7 +46,9 @@ const Layout = () => {
   };
   return (
     <div className="w-full">
+      {/* Top Navbar */}
       <TopBar setSelectedMenuItem={setSelectedMenuItem} menuList={menuList} />
+      {/* Left Navbar */}
       <LeftBar
         componentSwitch={componentSwitch}
         selectedMenuItem={selectedMenuItem}

@@ -15,6 +15,7 @@ import {
 } from "@ant-design/icons";
 import { Input } from "antd";
 
+// Posts for the user
 const Posts = () => {
   return (
     <div className="p-4">
@@ -31,6 +32,7 @@ const Posts = () => {
             longer accept this
           </p>
         </div>
+        {/* Edit / delete the post */}
         <div className="flex gap-3 cursor-pointer">
           <EditOutlined className="bg-[#1677FF] text-white p-1 rounded-full text-xs" />
           <DeleteOutlined className="bg-[#1677FF] text-white p-1 rounded-full text-xs" />
@@ -38,18 +40,22 @@ const Posts = () => {
       </div>
       <img src={CommentExample} />
       <div className="flex gap-12 p-3">
+        {/* Like the post */}
         <div className="flex gap-3 text-[#1677FF]">
           <LikeFilled />
           <p className="text-xs">1,9k</p>
         </div>
+        {/* Comment the post */}
         <div className="flex gap-3">
           <CommentOutlined />
           <p className="text-xs">45</p>
         </div>
+        {/* share the post */}
         <SendOutlined />
       </div>
       <div className="border"></div>
       <div className="p-4">
+        {/* thread by users on post*/}
         <div className="flex items-start gap-3">
           <img src={Comment2} alt="comment2" className="w-8 h-8 rounded-full" />
           <div>
@@ -121,6 +127,7 @@ const Posts = () => {
         </div>
         <div className="border"></div>
       </div>
+      {/* to add personal post */}
       <Input
         placeholder="Write a comment..."
         prefix={<img src={ProfileImg} className="w-5 h-5 rounded-full p-0" />}

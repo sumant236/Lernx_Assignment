@@ -9,6 +9,7 @@ import {
 } from "@ant-design/icons";
 import { Avatar, Drawer, Input, Menu } from "antd";
 
+// Top Navbar
 const TopBar = ({ setSelectedMenuItem, menuList }) => {
   const [open, setOpen] = useState(false);
 
@@ -22,6 +23,7 @@ const TopBar = ({ setSelectedMenuItem, menuList }) => {
         <img src={Logo} alt="icon" className="w-52 h-14" />
         <div className="bg-slate-300 h-14 w-px"></div>
       </div>
+      {/* Menu in top navbar for small screens */}
       <div className="lg:hidden xl:hidden 2xl:hidden md:block sm:block">
         <MenuOutlined onClick={showDrawer} className="p-5" />
         <Drawer
@@ -43,21 +45,27 @@ const TopBar = ({ setSelectedMenuItem, menuList }) => {
           />
         </Drawer>
       </div>
+      {/* top-right navbar */}
       <div className="flex justify-end items-center gap-4 pr-2 md:hidden sm:hidden">
+        {/* for searching */}
         <Input
           size="large"
           prefix={<SearchOutlined />}
           className="h-10 w-72"
           placeholder="Search"
         />
+        {/* for notifications */}
         <div className="border rounded-lg border-gray-300">
           <BellOutlined className="text-2xl p-2" />
         </div>
+        {/* For alerts */}
         <div className="border rounded-lg border-gray-300">
           <MailOutlined className="text-2xl p-2" />
         </div>
+        {/* user profile details */}
         <Avatar src={ProfileImg} />
       </div>
+      {/* search icon for small screens */}
       <div className="lg:hidden xl:hidden 2xl:hidden md:block sm:block">
         <SearchOutlined className="p-5" />
       </div>

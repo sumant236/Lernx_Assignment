@@ -4,9 +4,11 @@ import ComingSoon from "../ComingSoon";
 import About from "./About";
 import Posts from "./Posts";
 
+// navigation to personal details
 const Profiledetails = () => {
   const [current, setCurrent] = useState("about");
 
+  // List of menu items
   const items = [
     {
       label: "About",
@@ -26,6 +28,7 @@ const Profiledetails = () => {
     },
   ];
 
+  // selected menu item
   const selectedComponent = (key) => {
     switch (key) {
       case "about":
@@ -43,6 +46,7 @@ const Profiledetails = () => {
   return (
     <div className="flex-1 bg-slate-100 h-full w-full">
       <div className="m-4 bg-white shadow-lg rounded-md sm:mt-1 sm:m-0 sm:w-full">
+        {/* Menu of different user profile options */}
         <Menu
           onClick={(e) => setCurrent(e.key)}
           selectedKeys={[current]}

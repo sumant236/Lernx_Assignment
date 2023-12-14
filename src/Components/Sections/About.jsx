@@ -1,13 +1,17 @@
 import { BookFilled, EditOutlined, PlusOutlined } from "@ant-design/icons";
 import React, { useState } from "react";
 import EditProfSummary from "../Modal/EditProfSummary";
-import EditExperience from "../Modal/EditExperience";
-import AddExperience from "../Modal/AddExperience";
+// import EditExperience from "../Modal/EditExperience";
+// import AddExperience from "../Modal/AddExperience";
+import Experience from "../Modal/Experience";
+import ExperienceTemplate from "./ExperienceTemplate";
 
 const About = () => {
+  // Professional summary sample
   const [profSummary, setProfSummary] = useState(
     "The discovery was makde by Richard McClintock, a professor of Hampton-Sydney College in Virginia, who faced the impetuous recurrence of the dark word consectetur in the text Lorem ipsum researched its origins to identify them in sections 1.10.32 and 1.10.33 of the aforementione"
   );
+  // Experience sample
   const [experience, setExperience] = useState([
     {
       company: "Chris Intervention Specialist",
@@ -18,6 +22,7 @@ const About = () => {
         "Work with clients and web studios as freelancer. Work in next areas: eCommerce web projects; creative landing pages; iOs and Android apps; corporate web sites and corporate identity sometimes.",
     },
   ]);
+  // education sample
   const [education, setEducation] = useState([
     {
       course: "B.E - Electronics & telecommunication Engg.",
@@ -27,27 +32,28 @@ const About = () => {
     },
   ]);
   const [editSummary, setEditSummary] = useState(false);
-  const [editExperience, setEditExperience] = useState(false);
-  const [editEducation, setEditEducation] = useState(false);
   const [addExperience, setAddExperience] = useState(false);
-  const [addEducation, setAddEducation] = useState(false);
-
-  const deleteExperience = (exp) => {
-    const data = experience.filter((e) => e.company === exp);
-    setExperience(data);
-  };
 
   return (
     <div className="bg-slate-100 h-[42rem] lg:h-full md:h-full sm:h-full">
       <div className="bg-white flex gap-2 p-2">
         <p className="text-slate-500 text-sm flex-1">{profSummary}</p>
-        <EditOutlined
-          className="bg-[#1677FF] text-white p-1 rounded-full text-xs h-5 cursor-pointer"
-          onClick={() => setEditSummary((prev) => !prev)}
-        />
+        {/* to edit/add summary*/}
+        {profSummary ? (
+          <EditOutlined
+            className="bg-[#1677FF] text-white p-1 rounded-full text-xs h-5 cursor-pointer"
+            onClick={() => setEditSummary((prev) => !prev)}
+          />
+        ) : (
+          <PlusOutlined
+            className="text-white bg-[#1677FF] p-1 rounded-full h-5 w-5 cursor-pointer"
+            onClick={() => setEditSummary((prev) => !prev)}
+          />
+        )}
       </div>
       <div className="flex items-center justify-between p-2">
         <p className="text-lg">Experience</p>
+        {/* if no experience added then to add experience */}
         {experience.length === 0 && (
           <PlusOutlined
             className="text-white bg-[#1677FF] p-1 rounded-full h-5 w-5 cursor-pointer"
@@ -55,35 +61,21 @@ const About = () => {
           />
         )}
       </div>
+      {/* List of experiences */}
       {experience.map((exp, index) => (
-        <div key={index} className="bg-white flex p-2 gap-3">
-          <BookFilled className="bg-sky-200 h-8 text-[#1677FF] p-2 rounded-full" />
-          <div>
-            <p className="font-bold">{exp.company}</p>
-            <p className="text-slate-500 text-xs">{`${exp.from} - ${exp.to}`}</p>
-            <p className="text-slate-300 text-xs">{exp.location}</p>
-            <p className="text-[13px]">{exp.description}</p>
-          </div>
-          <div className="flex gap-3">
-            <PlusOutlined
-              className="text-white bg-[#1677FF] p-1 rounded-full h-5 w-5 cursor-pointer"
-              onClick={() => setAddExperience((prev) => !prev)}
-            />
-            <EditOutlined
-              className="bg-[#1677FF] text-white p-1 rounded-full text-xs h-5 cursor-pointer"
-              onClick={() => setEditExperience((prev) => !prev)}
-            />
-          </div>
-          <EditExperience
-            experience={exp}
-            editExperience={editExperience}
-            setEditExperience={setEditExperience}
-            handleDelete={() => deleteExperience(exp)}
+        <div key={index} className="bg-white p-2">
+          <ExperienceTemplate
+            experience={experience}
+            setExperience={setExperience}
+            exp={exp}
+            setAddExperience={setAddExperience}
+            index={index}
           />
         </div>
       ))}
       <p className="text-lg p-2">Education</p>
       <div className="height-fit bg-white p-2">
+        {/* List of education degrees */}
         {education.map((educ, index) => (
           <div key={index} className="flex gap-3">
             <BookFilled className="bg-sky-200 h-8 text-[#1677FF] p-2 rounded-full" />
@@ -93,29 +85,25 @@ const About = () => {
               <p className="text-slate-300 text-xs">{educ.college}</p>
             </div>
             <div className="flex gap-3">
-              <PlusOutlined
-                className="text-white bg-[#1677FF] p-1 rounded-full h-5 w-5 cursor-pointer"
-                onClick={() => setAddEducation((prev) => !prev)}
-              />
-              <EditOutlined
-                className="bg-[#1677FF] text-white p-1 rounded-full text-xs h-5 cursor-pointer"
-                onClick={() => setEditEducation((prev) => !prev)}
-              />
+              <PlusOutlined className="text-white bg-[#1677FF] p-1 rounded-full h-5 w-5 cursor-pointer" />
+              <EditOutlined className="bg-[#1677FF] text-white p-1 rounded-full text-xs h-5 cursor-pointer" />
             </div>
           </div>
         ))}
       </div>
+      {/* Edit professional summary modal */}
       <EditProfSummary
         setEditSummary={setEditSummary}
         editSummary={editSummary}
         profSummary={profSummary}
         setProfSummary={setProfSummary}
       />
-      <AddExperience
+      {/* Add Experience modal */}
+      <Experience
         experience={experience}
         setExperience={setExperience}
-        addExperience={addExperience}
-        setAddExperience={setAddExperience}
+        openExperience={addExperience}
+        setOpenExperience={setAddExperience}
       />
     </div>
   );

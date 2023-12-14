@@ -5,6 +5,7 @@ import Image2 from "../assets/Indonesia_UX_Research.png";
 import Image3 from "../assets/Prototyping_club.png";
 import Image4 from "../assets/Indonesia_UI_Designer2.png";
 
+// Left Nav bar
 const LeftBar = ({
   componentSwitch,
   selectedMenuItem,
@@ -14,6 +15,7 @@ const LeftBar = ({
   return (
     <div className="flex items-start">
       <div className="flex flex-col w-52 md:hidden sm:hidden">
+        {/* Menu Items in left navbar to navigate*/}
         <Menu
           style={{ width: 209 }}
           defaultSelectedKeys={["1"]}
@@ -21,6 +23,7 @@ const LeftBar = ({
           items={menuList}
           onClick={(e) => setSelectedMenuItem(e.key)}
         />
+        {/* Communities feed */}
         <div className="bg-slate-300 h-px w-48 m-auto"></div>
         <p className="text-lg p-2 text-center">Communities feed</p>
         <div className="flex px-4 py-2 gap-2">
@@ -56,6 +59,7 @@ const LeftBar = ({
         </p>
       </div>
       <div className="w-px bg-slate-300"></div>
+      {/* To show the selected Menu item */}
       <div className="flex-1 ">{componentSwitch(selectedMenuItem)}</div>
     </div>
   );

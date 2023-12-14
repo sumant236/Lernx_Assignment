@@ -4,19 +4,19 @@ export default {
   theme: {
     screens: {
       sm: { max: "410px", min: "0px" },
-      // => @media (min-width: 640px) { ... }
+      // => @media (max-width: 410px) { ... }
 
       md: { max: "620px", min: "410px" },
-      // => @media (min-width: 768px) { ... }
+      // => @media (max-width: 620px) { ... }
 
       lg: { max: "910px", min: "620px" },
-      // => @media (min-width: 1024px) { ... }
+      // => @media (max-width: 910px) { ... }
 
       xl: { max: "1280px", min: "910px" },
-      // => @media (min-width: 1280px) { ... }
+      // => @media (max-width: 1280px) { ... }
 
       "2xl": { max: "1536px", min: "1280px" },
-      // => @media (min-width: 1536px) { ... }
+      // => @media (max-width: 1536px) { ... }
     },
   },
   plugins: [],

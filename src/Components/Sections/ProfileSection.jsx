@@ -5,6 +5,7 @@ import DropBox from "../../assets/Dropbox_Icon.png";
 import Gmail from "../../assets/Gmail_icon.png";
 import Slack from "../../assets/slack-logo.png";
 
+// Profile details for the user
 const ProfileSection = () => {
   return (
     <div className="text-center pt-24 px-4 max-w-[25%] bg-white lg:max-w-full md:max-w-full sm:max-w-full sm:px-2">
@@ -39,6 +40,7 @@ const ProfileSection = () => {
       </div>
       <div className="bg-slate-100 rounded-md border border-violet-200 py-4 sm:py-2">
         <p className="pb-3 sm:py-1">Wheel of Opportunities</p>
+        {/* Circle progress bar for sphere rating */}
         <Progress
           type="circle"
           percent={40}
@@ -53,6 +55,7 @@ const ProfileSection = () => {
       </div>
       <div className="pt-8 pb-1">
         <p className="text-xs font-normal">Your Ranking</p>
+        {/* Linear progress bar */}
         <Progress
           percent={73}
           status="active"

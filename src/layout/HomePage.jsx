@@ -5,6 +5,7 @@ import ProfileImg from "../assets/profile_img.jpg";
 import Profiledetails from "../Components/Sections/Profiledetails";
 import ProfileSection from "../Components/Sections/ProfileSection";
 
+// Homepage of the website
 const HomePage = () => {
   return (
     <div>
